@@ -12,4 +12,15 @@ class Ship extends Model
     protected $fillable = [
         'name', 'max_clients', 'captain_id'
     ];
+
+    protected $appends = [
+        'captain'
+    ];
+
+    /**
+     * Table appends
+     */
+    public function getCaptainAttribute() {
+        return User::find( $this->captain_id );
+    }
 }

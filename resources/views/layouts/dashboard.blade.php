@@ -62,24 +62,24 @@
                 <span>Ships</span>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link {{ ( request()->route()->getName() == 'routes' ) ? 'active' : '' }}" href="{{ route( 'routes' ) }}">
                 <i class="material-icons">map</i>
                 <span>Routes</span>
               </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <a class="nav-link {{ ( request()->route()->getName() == 'sails' ) ? 'active' : '' }}" href="{{ route( 'sails' ) }}">
                 <i class="material-icons">sailing</i>
                 <span>Sails</span>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link {{ ( request()->route()->getName() == 'graphs' ) ? 'active' : '' }}" href="{{ route( 'graphs' ) }}">
                 <i class="material-icons">analytics</i>
                 <span>Graphs</span>
               </a>
-            </li>
+            </li> --}}
           </ul>
         </div>
       </aside>
@@ -138,5 +138,9 @@
     </div>
   </div>
 
+  <script src="{{ asset( 'js/jquery-3.6.0.min.js' ) }}"></script>
+  <script src="{{ asset( 'js/sweetalert2.all.min.js' ) }}"></script>
 </body>
 </html>
+
+@yield( 'scripts' )
