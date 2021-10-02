@@ -18,7 +18,7 @@ class CreateShipsTable extends Migration
             $table->string( 'name' );
             $table->integer( 'max_clients' );
             $table->foreignId( 'captain_id' )->constrained( 'users' )->onDelete( 'cascade' );
-            $table->string( 'status' )->nullable()->default( 'NULL' );
+            $table->integer( 'status' )->nullable()->default( 0 );
             $table->json( 'metadata' )->nullable();
             $table->timestamps();
         });

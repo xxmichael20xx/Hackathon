@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class UserRole extends Model
 {
     use HasFactory;
+
+    protected $appends = [
+        'client'
+    ];
+
+    /**
+     * Table appends
+     */
+    public function getClientAttribute() {
+        $client = User::find( $this->user_id );
+        return $client;
+    }
 }
